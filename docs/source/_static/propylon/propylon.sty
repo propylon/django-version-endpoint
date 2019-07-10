@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Propylon Documentation Latex Style
+% LaTeX Template
+%
+% Any problems about this template, please contact:
+% marissa.zhou@propylon.com
+%
+% This template can be used in two steps:
+%
+% 1) add this file into source folder
+%
+% 2) update conf.py file by adding one line
+%   latex_elements = {
+%       'preamble': '\\usepackage{propylon}',
+%   }
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\usepackage{calc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{zref-savepos}
+\usepackage[cm]{fullpage}
+\usepackage{atbegshi,picture}
+\usepackage{tikz} % for \gradientbox below.
+\usepackage{eso-pic}
+\usepackage{lastpage}
+\usepackage[T1]{fontenc}
+
+\definecolor{propylonblue}{RGB}{108, 151, 202}
+
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+
+\renewcommand\thesection{\arabic{section}}
+\newcommand{\at}{\makeatletter @\makeatother}
+\newcommand{\propyloncopyrightO}{\color{white}\fontsize{6}{12}\selectfont Copyright\at Propylon Ltd. All rights reserved. Circulation of this document to anyone other than project personnel.\newline  Propylon Personnel or other personnel with responsibilities related to the project is prohibited.\hspace*{1.5cm}}
+\newcommand{\propyloncopyrightE}{\color{white}\fontsize{6}{12}\selectfont Copyright\at Propylon Ltd. All rights reserved. Circulation of this document to anyone other than project personnel.\newline \hspace*{1.0cm} Propylon Personnel or other personnel with responsibilities related to the project is prohibited.}
+\newcommand{\pageinfo}{\fontsize{10}{12}\selectfont Page \thepage\ of \color{white} {\hypersetup{linkcolor=white}\pageref{LastPage}}}
+
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{\raisebox{-\height}{\hspace*{-0.2cm} \includegraphics[width=1.1\paperwidth]{PropylonHeadFrontpage.jpg}}}%
+}
+
+\AddToShipoutPictureBG*{\AtPageLowerLeft{%
+\begin{tikzpicture}
+    \path [bottom color = propylonblue, top color = white]
+      (0,0) rectangle (\paperwidth,.26\paperheight);
+  \end{tikzpicture}
+}}
+
+\AddToShipoutPictureBG{%
+  \AtPageUpperLeft{\hspace*{-0.3cm} \raisebox{-\height}{
+  \color{gray!40}\rule{1.1\paperwidth}{.068\paperheight}
+  }}%
+}
+
+\AddToShipoutPictureBG{%
+  \vspace{-2cm}
+  \AtPageUpperLeft{\raisebox{-\height}{\hspace{2cm}  \includegraphics[width=2.5in]{PropylonHeadPropylon.jpg}}}%
+}
+
+\AddToShipoutPictureBG{\AtPageLowerLeft{%
+  \color{black}\rule{\paperwidth}{.06\paperheight}}}
+
+% Redefine the 'normal' header/footer style when using "fancyhdr" package:
+\@ifundefined{fancyhf}{}{
+  % Use \pagestyle{normal} as the primary pagestyle for text.
+  \fancypagestyle{normal}{
+    \fancyhf{} % Clear header/footer
+    \fancyhead[LE,RO]{\color{black} \fontsize{8}{12}\selectfont \slshape \rightmark}
+    \fancyhead[LO,RE]{\color{black} \fontsize{8}{12}\selectfont \slshape \leftmark}
+    \fancyfoot[LE]{{\color{white} \py@HeaderFamily \propyloncopyrightE\hspace*{2cm}\pageinfo}}
+    \fancyfoot[RO]{{\color{white} \pageinfo \hspace*{1.5cm} \py@HeaderFamily \propyloncopyrightO}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    % define chaptermark with \@chappos when \@chappos is available for Japanese
+    \ifx\@chappos\undefined\else
+      %\def\chaptermark##1{\markboth{\@chapapp\space\thechapter\space\@chappos\space ##1}{}}
+      \def\chaptermark##1{\markboth{ ##1}{}}
+    \fi
+  }
+  % Update the plain style so we get the page number & footer line,
+  % but not a chapter or section title.  This is to keep the first
+  % page of a chapter and the blank page between chapters `clean.'
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LE]{{\color{white} \py@HeaderFamily \propyloncopyrightE\hspace*{2cm}\pageinfo}}
+    \fancyfoot[RO]{{\color{white} \pageinfo \hspace*{1.5cm} \py@HeaderFamily \propyloncopyrightO}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+  }
+}
+
+% This sets up the fancy chapter headings that make the documents look
+% at least a little better than the usual LaTeX output.
+%
+\@ifundefined{ChTitleVar}{}{
+  %\ChNameVar{\bfseries\LARGE\sf}
+  %\ChNumVar{\fontsize{10}{12}\selectfont}
+  \ChNameVar{\raggedright \normalsize\py@HeaderFamily}
+  \ChNumVar{\raggedright \bfseries\Large\py@HeaderFamily}
+  %\ChTitleVar{\raggedright \rm\Huge\py@HeaderFamily}
+  \ChTitleVar{\bfseries\Huge\py@HeaderFamily} \ChRuleWidth{1pt} \ChNameAsIs
+  \ChTitleAsIs
+  % This creates chapter heads without the leading \vspace*{}:
+  \def\@makechapterhead#1{%
+    {\parindent \z@ \raggedright \normalfont
+      \ifnum \c@secnumdepth >\m@ne
+        \DOCH
+      \fi
+      \interlinepenalty\@M
+      \DOTI{#1}
+    }
+  }
+}
+% This removes chapter name
+% \renewcommand\FmN[1]{}

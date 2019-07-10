@@ -1,0 +1,11 @@
+pytest<5
+pytest-xdist
+pytest-cov
+pytest-mock
+pytest-django
+pytest-pythonpath
+pycodestyle
+pydocstyle
+flake8
+isort
+tox>=3.7
