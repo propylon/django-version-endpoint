@@ -1,0 +1,20 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[**.py]
+indent_style = space
+indent_size = 4
+multi_line_output = 3
+not_skip = __init__.py
+default_section = THIRDPARTY
+known_first_party = django-version-endpoint
+known_django = django
+sections = FUTURE,STDLIB,DJANGO,THIRDPARTY,FIRSTPARTY,LOCALFOLDER
+use_parentheses = True

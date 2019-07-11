@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ host }}</title>
+</head>
+<body>
+
+  <h3>{{ host }}</h3>
+  <ul>
+    {% for pkg_name, version in versions.items %}
+      <li>{{ pkg_name }}: {{ version }}</li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
