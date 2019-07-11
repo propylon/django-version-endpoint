@@ -1,6 +1,17 @@
 language: python
 dist: xenial
 python:
-  - "3.6"
+- '3.6'
+
 script:
-  - make test
+- make test
+
+deploy:
+  provider: pypi
+  user: "Propylon"
+  password:
+    secure: OjQfu4gV5GrozT0kQNaBi/5KZOadoPEpq80vkfGqAFKbW7gDOhcyxrwxEuLgnQiZKOUGLewyqAJC3ExrXyrSqqfddikQzyFgj8lZOJS5LXxTQhnkE7iVmpHAlxl2M5TRd6A9DOthadbej7Ytt2puUFmbL0EyjePCNe5iH/Z9aGPv0Fp94ryRodT9CuH5Xmb1Tx3TpppDBm4Rvyi2tOzK4FVNwuIcML59dEJu7isH3SZEmf0gbe4YkMAvbbmh72hUc+HW1zuskGIPUmkhJ/3miusoMaWuUVPbd7VplLYcyLDL5E0i1D++WgxPseaEhxmYTF1EtDjH+RtK3RV0U2xRqnFQT8emVYpyKvID/m5Y2NKnD0T2+r37IIFdZ8SKmR2u6Ozy2L8AdgTjfkhtybXqtmcv/ZKtdaucgiJlri7RNq1pl87sE+8SflmynWnHTJGZ3sCmUqWDSnkZq+k+xLVwPQ62ebV9ctud0f5XBATcXHHORoXuex9qWXT9OGXLWPYbr7zbFEvXUBVv5u7XPYmfmMsD/CrPji9gfufuSyw3bS06e67PlAu0fC0LIcpLnXmV1BWvbT3PNFcGxqyOAAoIDvszkTRcwI9vEclL2zHi/VnTIOl7nBsi60Zsg+WZCFkbLKPlz99cnPZ1YoYRQQqM1/I+/sDkg42xqLP1MUPzjw8=
+  skip_existing: true
+  on:
+    tags: true
+    branch: master
