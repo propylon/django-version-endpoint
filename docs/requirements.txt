@@ -1,2 +1,1 @@
-herodotus
 sphinx_rtd_theme

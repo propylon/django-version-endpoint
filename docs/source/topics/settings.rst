@@ -10,7 +10,7 @@ settings.
       The packages, that are returned in the list endpoint.
 
       Default
-         :code:`['version_endpoint', 'Django']`
+         :code:`['django-version-endpoint', 'Django']`
 
       Examples::
 
