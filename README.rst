@@ -3,6 +3,8 @@ django-version-endpoint
 
 > Provide an endpoint to query installed python package versions
 
+[![Build Status](https://travis-ci.org/propylon/django-version-endpoint.svg?branch=master)](https://travis-ci.org/propylon/django-version-endpoint)
+
 Usage
 -----
 
