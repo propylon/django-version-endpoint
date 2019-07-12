@@ -14,4 +14,4 @@ deploy:
   skip_existing: true
   on:
     tags: true
-    branch: master
+    branch: support/1.0
