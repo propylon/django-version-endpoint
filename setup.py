@@ -15,7 +15,7 @@ INSTALL_REQUIRES = ['setuptools', 'Django>=1.11']
 
 setup(
     name='django-version-endpoint',
-    version='1.0.1',
+    version='1.0.2',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
