@@ -15,7 +15,7 @@ INSTALL_REQUIRES = ['setuptools', 'Django>=1.11']
 
 setup(
     name='django-version-endpoint',
-    version='1.0.3',
+    version='1.0.4',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
@@ -32,7 +32,7 @@ setup(
         'Framework :: Django :: 1.11',
         'Framework :: Django :: 2.2',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache 2',
+        'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
